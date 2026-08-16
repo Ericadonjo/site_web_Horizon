@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: site-web-horizon
+    env: php
+    buildCommand: composer install
+    startCommand: vendor/bin/heroku-php-apache2 .
