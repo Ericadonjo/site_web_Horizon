@@ -1,0 +1,12 @@
+# Ignore DB credentials
+siteWeb/config/mysql.php
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Node / vendor
+node_modules/
+vendor/
