@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : dim. 16 août 2026 à 18:58
+-- Généré le : dim. 16 août 2026 à 20:57
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -69,7 +69,17 @@ CREATE TABLE `Avis` (
 INSERT INTO `Avis` (`idAvis`, `nomAuteur`, `emailAuteur`, `texte`, `note`, `statut`, `datePublication`, `idParent`) VALUES
 (1, 'Jean-Paul KOUAM', 'jp.kouam@gmail.com', 'Excellente école, mes enfants ont progressé de manière spectaculaire cette année !', 5, 'VALIDE', '2026-08-15 22:38:53', 1),
 (2, 'Christine MBALLA', 'c.mballa@yahoo.fr', 'Encadrement rigoureux et environnement très propre.', 5, 'VALIDE', '2026-08-15 22:38:53', 2),
-(3, 'Alain NGEN', 'alain.ngen@outlook.com', 'Je souhaiterais savoir si le transport scolaire couvre la zone de Bastos.', 4, 'EN_ATTENTE', '2026-08-15 22:38:53', NULL);
+(3, 'Alain NGEN', 'alain.ngen@outlook.com', 'Je souhaiterais savoir si le transport scolaire couvre la zone de Bastos.', 4, 'EN_ATTENTE', '2026-08-15 22:38:53', NULL),
+(4, 'Alice Mballa', 'alice.mballa@gmail.com', 'Excellent établissement ! Les enseignants sont très qualifiés et à l\'écoute.', 5, 'APPROUVE', '2026-08-16 18:46:02', NULL),
+(5, 'Paul Atangana', 'paul.atangana@yahoo.fr', 'La plateforme en ligne est très pratique, mais l\'organisation des cours pourrait être améliorée.', 3, 'APPROUVE', '2026-08-16 18:46:02', NULL),
+(6, 'Carine Nkolo', 'carine.nkolo@hotmail.com', 'Je suis très satisfaite de la formation. Les projets pratiques apportent une vraie valeur.', 5, 'APPROUVE', '2026-08-16 18:46:02', NULL),
+(7, 'Marc Ekani', 'marc.ekani@outlook.com', 'Des retards fréquents dans la transmission des emplois du temps. C\'est dommage.', 2, 'EN_ATTENTE', '2026-08-16 18:46:02', NULL),
+(8, 'Sophie Ndongo', 'sophie.ndongo@gmail.com', 'Superbe expérience académique, je recommande vivement cet établissement.', 4, 'APPROUVE', '2026-08-16 18:46:02', NULL),
+(9, 'Jean-Paul Kamga', 'jp.kamga@gmail.com', 'Services administratifs un peu lents, mais la qualité des cours rattrape le coup.', 3, 'EN_ATTENTE', '2026-08-16 18:46:02', NULL),
+(10, 'Diane Ondoa', 'diane.ondoa@yahoo.cm', 'Une infrastructure moderne et un cadre idéal pour travailler.', 4, 'APPROUVE', '2026-08-16 18:46:02', NULL),
+(11, 'Admin', 'admin@ecole.cm', 'Merci pour votre retour positif Alice ! Nous continuons à faire évoluer la formation.', NULL, 'APPROUVE', '2026-08-16 18:46:02', 1),
+(12, 'Support Académique', 'support@ecole.cm', 'Bonjour Marc, nous prenons en compte votre remarque pour améliorer le planning.', NULL, 'APPROUVE', '2026-08-16 18:46:02', 4),
+(13, 'Admin', 'admin@ecole.cm', 'Merci beaucoup Carine pour vos encouragements !', NULL, 'APPROUVE', '2026-08-16 18:46:02', 3);
 
 -- --------------------------------------------------------
 
@@ -350,7 +360,8 @@ INSERT INTO `Eleve` (`matEleve`, `nom`, `prenom`, `age`, `sexe`, `idClasse`, `id
 (2026197, 'MOMOH', 'Walter', 11, 'M', 10, 3),
 (2026198, 'BAWA', 'Zoe', 11, 'F', 10, 5),
 (2026199, 'NJOH', 'Bernard', 11, 'M', 10, 7),
-(2026200, 'NTUI', 'Catherine', 11, 'F', 10, 9);
+(2026200, 'NTUI', 'Catherine', 11, 'F', 10, 9),
+(26023678, 'Chiwen', 'Emilie ', 6, 'Feminin', 28, 11);
 
 -- --------------------------------------------------------
 
@@ -542,7 +553,10 @@ CREATE TABLE `Message` (
 
 INSERT INTO `Message` (`idMessage`, `nomExpediteur`, `emailExpediteur`, `telephoneExpediteur`, `typeMessage`, `contenuMessage`, `dateEnvoi`, `statut`) VALUES
 (1, 'Henri BINDZI', 'h.bindzi@gmail.com', '+237699001122', 'Inscription', 'Bonjour, quelles sont les pièces à fournir pour une inscription en SIL ?', '2026-08-15 22:38:53', 'NON_LU'),
-(2, 'Grace TCHOUTA', 'grace.tchouta@yahoo.com', '+237677889900', 'Tarifs', 'Pouvez-vous m envoyer la grille tarifaire complète pour la section anglophone (Nursery) ?', '2026-08-15 22:38:53', 'TRAITE');
+(2, 'Grace TCHOUTA', 'grace.tchouta@yahoo.com', '+237677889900', 'Tarifs', 'Pouvez-vous m envoyer la grille tarifaire complète pour la section anglophone (Nursery) ?', '2026-08-15 22:38:53', 'TRAITE'),
+(3, 'Test', 'test@example.com', '0123456789', 'Test', 'Bonjour', '2026-08-16 18:18:01', 'EN_ATTENTE'),
+(4, 'Test', 'test@example.com', '0123456789', 'Test', 'Bonjour', '2026-08-16 18:21:05', 'EN_ATTENTE'),
+(5, 'Erica Donjo', 'ericadonjo2006@gmail.com', '+237682808217', 'Information générale', 'Hello', '2026-08-16 19:22:41', 'EN_ATTENTE');
 
 -- --------------------------------------------------------
 
@@ -573,7 +587,8 @@ INSERT INTO `Parent` (`idParent`, `nom`, `prenom`, `email`, `numTel`, `sexe`) VA
 (7, 'NKOLO', 'Françoise', 'f.nkolo@gmail.com', '+237694321098', 'F'),
 (8, 'AGBOR', 'Charles', 'charles.agbor@gmail.com', '+237678112233', 'M'),
 (9, 'BILO A', 'Carine', 'carine.biloa@yahoo.fr', '+237651334455', 'F'),
-(10, 'EWOANE', 'Marc', 'marc.ewoane@gmail.com', '+237696778899', 'M');
+(10, 'EWOANE', 'Marc', 'marc.ewoane@gmail.com', '+237696778899', 'M'),
+(11, 'Donjo', 'Erica', 'ericadonjo2006@gmail.com', '682808217', 'Feminin');
 
 --
 -- Index pour les tables déchargées
@@ -654,7 +669,7 @@ ALTER TABLE `Article`
 -- AUTO_INCREMENT pour la table `Avis`
 --
 ALTER TABLE `Avis`
-  MODIFY `idAvis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idAvis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `Classe`
@@ -672,13 +687,13 @@ ALTER TABLE `Matiere`
 -- AUTO_INCREMENT pour la table `Message`
 --
 ALTER TABLE `Message`
-  MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idMessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `Parent`
 --
 ALTER TABLE `Parent`
-  MODIFY `idParent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idParent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Contraintes pour les tables déchargées
